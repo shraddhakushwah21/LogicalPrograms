@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+      
+      <!-- <bean id="empBean" class="com.spring.beans.Employee" autowire="byName"> -->
+      <bean id="empBean" class="com.spring.beans.Employee" autowire="constructor">
+      	<!-- <property name="name" value="Shraddha"/>
+      	<property name="sal" value="20000"/> -->
+      	<!-- <property name="addr" ref="addrBean"></property> -->
+      	
+      	<constructor-arg value="Shraddha"/>
+      	<constructor-arg value="10000"/>
+      	<constructor-arg ref="addrBean"/>
+      </bean> 
+      
+      <bean id="addrBean" class="com.spring.beans.Address">
+      	<property name="street" value="darpan colony"/>
+      	<property name="hNo" value="230"/>
+      	<property name="city" value="Gwalior"></property>
+      </bean> 
+        
+</beans>
